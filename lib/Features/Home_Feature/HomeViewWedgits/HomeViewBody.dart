@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:newsapp/Features/Home_Feature/HomeViewWedgits/CategoryItemListView.dart';
+import 'package:newsapp/Features/Home_Feature/HomeViewWedgits/NewsCardItem.dart';
+import 'package:newsapp/Features/Home_Feature/HomeViewWedgits/NewsCardItemListView.dart';
 import 'package:newsapp/Features/Splash_feature/Wedgits/appLogo.dart';
 
 class HomeViewBody extends StatelessWidget {
@@ -13,9 +15,12 @@ class HomeViewBody extends StatelessWidget {
           children: [
             const NewsLogo(logoSize: 28),
             CategoryItemListView(),
+            NewsCardItemListView()
           ],
         ),
       ),
     );
   }
 }
+
+
