@@ -21,6 +21,13 @@ class _SplashViewBodyState extends State<SplashViewBody>
   }
 
   @override
+  void dispose() {
+    animationController.dispose();
+    // TODO: implement dispose
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
@@ -41,5 +48,4 @@ class _SplashViewBodyState extends State<SplashViewBody>
       setState(() {});
     });
   }
-  
 }

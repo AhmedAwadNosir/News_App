@@ -3,6 +3,7 @@ import 'package:newsapp/Features/Home_Feature/HomeViewWedgits/CategoryItemListVi
 import 'package:newsapp/Features/Home_Feature/HomeViewWedgits/NewsCardItem.dart';
 import 'package:newsapp/Features/Home_Feature/HomeViewWedgits/NewsCardItemListView.dart';
 import 'package:newsapp/Features/Splash_feature/Wedgits/appLogo.dart';
+import 'package:newsapp/Utils/NewsApiServieces.dart';
 
 class HomeViewBody extends StatelessWidget {
   const HomeViewBody({super.key});
@@ -15,12 +16,25 @@ class HomeViewBody extends StatelessWidget {
           children: [
             const NewsLogo(logoSize: 28),
             CategoryItemListView(),
-            NewsCardItemListView()
+            FutureBuilder(
+                future: NewsApiServices.featchData(),
+                builder: (context, snapshot) {
+                  if (!snapshot.hasError) {
+                    if (snapshot.connectionState == ConnectionState.done) {
+                      return NewsCardItemListView(newsCarditem: snapshot.data!);
+                    } else {
+                      return const CircularProgressIndicator();
+                    }
+                  } else {
+                    return Text(
+                      snapshot.error.toString(),
+                      style: const TextStyle(fontSize: 18, color: Colors.white),
+                    );
+                  }
+                })
           ],
         ),
       ),
     );
   }
 }
-
-
