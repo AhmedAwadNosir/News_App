@@ -9,13 +9,37 @@ class SplashViewBody extends StatefulWidget {
   State<SplashViewBody> createState() => _SplashViewBodyState();
 }
 
-class _SplashViewBodyState extends State<SplashViewBody> {
+class _SplashViewBodyState extends State<SplashViewBody>
+    with SingleTickerProviderStateMixin {
+  late AnimationController animationController;
+  late Animation<double> feadinganimation;
+  @override
+  void initState() {
+    animation();
+    // TODO: implement initState
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       body: Center(
-        child: NewsLogo(logoSize: 48),
+        child: NewsLogo(logoSize: feadinganimation.value),
       ),
     );
   }
+
+  void animation() {
+    animationController = AnimationController(
+      vsync: this,
+      duration: const Duration(seconds: 1),
+    );
+    feadinganimation =
+        Tween<double>(begin: 48, end: 60).animate(animationController);
+    animationController.repeat(reverse: true);
+    animationController.addListener(() {
+      setState(() {});
+    });
+  }
+  
 }
