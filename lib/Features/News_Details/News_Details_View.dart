@@ -1,6 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
-import 'package:newsapp/Features/Splash_feature/Wedgits/appLogo.dart';
+import 'package:newsapp/Features/Splash/Wedgits/appLogo.dart';
 import 'package:newsapp/Models/NewsCardItem.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 

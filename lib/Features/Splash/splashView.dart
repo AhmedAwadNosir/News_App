@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
-import 'package:newsapp/Features/Home_Feature/HomeView.dart';
-import 'package:newsapp/Features/Splash_feature/Wedgits/splashViewBody.dart';
+import 'package:newsapp/Features/Home/HomeView.dart';
+import 'package:newsapp/Features/Splash/Wedgits/splashViewBody.dart';
 
 class SplashView extends StatefulWidget {
   const SplashView({super.key});

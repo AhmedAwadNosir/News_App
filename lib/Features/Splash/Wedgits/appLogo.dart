@@ -1,16 +1,20 @@
 import 'package:flutter/material.dart';
 
 class NewsLogo extends StatelessWidget {
-  const NewsLogo({super.key, required this.logoSize});
+  const NewsLogo({super.key, required this.logoSize, @required this.part1="News"});
   final double logoSize;
+  final String part1;
   @override
   Widget build(BuildContext context) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Text(
-          "News",
-          style: TextStyle(fontSize: logoSize, fontWeight: FontWeight.w400,color: Colors.black),
+          part1,
+          style: TextStyle(
+              fontSize: logoSize,
+              fontWeight: FontWeight.w400,
+              color: Colors.black),
         ),
         Text(
           "Cloud",

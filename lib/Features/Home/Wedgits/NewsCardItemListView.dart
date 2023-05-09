@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:newsapp/Features/Home_Feature/HomeViewWedgits/NewsCardItem.dart';
 import 'package:newsapp/Features/News_Details/News_Details_View.dart';
 import 'package:newsapp/Models/NewsCardItem.dart';
+import 'package:newsapp/Utils/NewsApiServieces.dart';
+
+import 'NewsCardItem.dart';
 
 class NewsCardItemListView extends StatelessWidget {
   const NewsCardItemListView({super.key, required this.newsCarditem});
@@ -21,7 +23,9 @@ class NewsCardItemListView extends StatelessWidget {
                 context,
                 MaterialPageRoute(
                   builder: (context) {
-                    return  NewsDetailsView(news: currentViews,);
+                    return NewsDetailsView(
+                      news: currentViews,
+                    );
                   },
                 ),
               );

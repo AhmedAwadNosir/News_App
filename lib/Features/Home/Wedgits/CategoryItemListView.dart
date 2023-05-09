@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:newsapp/Features/Home_Feature/HomeViewWedgits/NewsCategoryItem.dart';
+import 'package:newsapp/Features/Home/Wedgits/NewsCategoryItem.dart';
 import 'package:newsapp/Models/CategoryItemModel.dart';
+
+import '../Category_Page_View.dart';
 
 class CategoryItemListView extends StatelessWidget {
   CategoryItemListView({super.key});
@@ -21,8 +23,16 @@ class CategoryItemListView extends StatelessWidget {
         child: ListView.builder(
           scrollDirection: Axis.horizontal,
           itemCount: Categorys.length,
-          itemBuilder: (context, index) =>
-              NewsCategoryItem(category: Categorys[index]),
+          itemBuilder: (context, index) => GestureDetector(
+              onTap: () {
+                var currentCategory = Categorys[index];
+                Navigator.push(context, MaterialPageRoute(
+                  builder: (context) {
+                    return CategoryPageView(categroy: currentCategory,);
+                  },
+                ));
+              },
+              child: NewsCategoryItem(category: Categorys[index])),
         ),
       ),
     );

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:newsapp/Features/Home_Feature/HomeViewWedgits/CategoryItemListView.dart';
-import 'package:newsapp/Features/Home_Feature/HomeViewWedgits/NewsCardItemListView.dart';
-import 'package:newsapp/Features/Splash_feature/Wedgits/appLogo.dart';
+import 'package:newsapp/Features/Home/Wedgits/CategoryItemListView.dart';
+import 'package:newsapp/Features/Home/Wedgits/NewsCardItemListView.dart';
+import 'package:newsapp/Features/Splash/Wedgits/appLogo.dart';
 import 'package:newsapp/Utils/NewsApiServieces.dart';
 
 import 'NewsItemlistViewFutureBuilder.dart';
