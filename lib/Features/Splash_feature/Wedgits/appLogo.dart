@@ -10,7 +10,7 @@ class NewsLogo extends StatelessWidget {
       children: [
         Text(
           "News",
-          style: TextStyle(fontSize: logoSize, fontWeight: FontWeight.w400),
+          style: TextStyle(fontSize: logoSize, fontWeight: FontWeight.w400,color: Colors.black),
         ),
         Text(
           "Cloud",

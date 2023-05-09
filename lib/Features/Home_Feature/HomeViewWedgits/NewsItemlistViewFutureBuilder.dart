@@ -18,9 +18,17 @@ class NewsItemlistViewFutureBuilder extends StatelessWidget {
             return const Center(child: CircularProgressIndicator());
           }
         } else {
-          return Text(
-            snapshot.error.toString(),
-            style: const TextStyle(fontSize: 18, color: Colors.white),
+          return Center(
+            child: Padding(
+              padding: const EdgeInsets.only(top: 20),
+              child: SizedBox(
+                width: MediaQuery.of(context).size.width * 0.8,
+                child: Text(
+                  snapshot.error.toString(),
+                  style: const TextStyle(fontSize: 18, color: Colors.black),
+                ),
+              ),
+            ),
           );
         }
       },

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:newsapp/Features/Home_Feature/HomeViewWedgits/NewsCardItem.dart';
+import 'package:newsapp/Features/News_Details/News_Details_View.dart';
 import 'package:newsapp/Models/NewsCardItem.dart';
 
 class NewsCardItemListView extends StatelessWidget {
@@ -13,8 +14,19 @@ class NewsCardItemListView extends StatelessWidget {
         shrinkWrap: true,
         physics: const NeverScrollableScrollPhysics(),
         itemCount: newsCarditem.length,
-        itemBuilder: (context, index) =>
-            NewsCardItem(newsCardItemModel: newsCarditem[index]),
+        itemBuilder: (context, index) => GestureDetector(
+            onTap: () {
+              var currentViews = newsCarditem[index];
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) {
+                    return  NewsDetailsView(news: currentViews,);
+                  },
+                ),
+              );
+            },
+            child: NewsCardItem(newsCardItemModel: newsCarditem[index])),
       ),
     );
   }
