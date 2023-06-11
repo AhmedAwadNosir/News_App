@@ -1,10 +1,9 @@
 import 'package:dio/dio.dart';
-import 'package:flutter/foundation.dart';
 
 import '../Models/NewsCardItem.dart';
 
 abstract class NewsApiServices {
-  static String CategoryKey="science";
+  static String CategoryKey = "science";
   static Future<List<NewsCardItemModel>> featchData() async {
     final dio = Dio();
     const String baseUrl = "https://newsapi.org/v2/everything";
@@ -30,7 +29,7 @@ abstract class NewsApiServices {
   static Future<List<NewsCardItemModel>> featchCategoryData() async {
     final dio = Dio();
     const String baseUrl = "https://newsapi.org/v2/top-headlines";
-     
+
     try {
       var response = await dio.get(
           "$baseUrl?country=us&category=$CategoryKey&apiKey=ad7a29fc84104227ad0b29c458b753ef");

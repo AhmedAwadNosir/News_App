@@ -21,8 +21,12 @@ class NewsCardItem extends StatelessWidget {
             children: [
               ClipRRect(
                 borderRadius: BorderRadius.circular(10),
-                child: SizedBox(
+                child: Container(
                   width: MediaQuery.of(context).size.width * 1,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      border: Border.all(
+                          color:const Color.fromARGB(255, 116, 118, 143), width: 1.2)),
                   child: AspectRatio(
                     aspectRatio: 370 / 230,
                     child: CachedNetworkImage(

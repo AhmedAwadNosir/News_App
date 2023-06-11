@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
 class NewsLogo extends StatelessWidget {
-  const NewsLogo({super.key, required this.logoSize, @required this.part1="News"});
+  const NewsLogo(
+      {super.key, required this.logoSize, @required this.part1 = "News"});
   final double logoSize;
   final String part1;
   @override
@@ -12,9 +13,9 @@ class NewsLogo extends StatelessWidget {
         Text(
           part1,
           style: TextStyle(
-              fontSize: logoSize,
-              fontWeight: FontWeight.w400,
-              color: Colors.black),
+            fontSize: logoSize,
+            fontWeight: FontWeight.w400,
+          ),
         ),
         Text(
           "Cloud",

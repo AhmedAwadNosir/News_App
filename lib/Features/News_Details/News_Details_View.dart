@@ -1,4 +1,3 @@
-import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:newsapp/Features/Splash/Wedgits/appLogo.dart';
 import 'package:newsapp/Models/NewsCardItem.dart';
@@ -27,14 +26,12 @@ class _NewsDetailsViewState extends State<NewsDetailsView> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        iconTheme: const IconThemeData(color: Colors.black),
-        backgroundColor: Colors.white,
+        iconTheme: const IconThemeData(),
         title: const NewsLogo(logoSize: 25),
       ),
       body: WebViewWidget(
         controller: controller,
       ),
-      
     );
   }
 }
