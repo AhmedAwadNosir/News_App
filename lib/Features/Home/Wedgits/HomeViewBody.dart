@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:newsapp/Features/Home/Wedgits/CategoryItemListView.dart';
 import 'package:newsapp/Features/Home/Wedgits/NewsCardItemListView.dart';
+import 'package:newsapp/Features/Home/Wedgits/change_theme_button.dart';
 import 'package:newsapp/Features/Splash/Wedgits/appLogo.dart';
 import 'package:newsapp/Utils/NewsApiServieces.dart';
 
@@ -21,7 +22,14 @@ class HomeViewBody extends StatelessWidget {
               ),
             ),
             const SliverToBoxAdapter(
-              child: NewsLogo(logoSize: 28),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  NewsLogo(logoSize: 28),
+                  SizedBox(width: 75,),
+                  ChangeThemeButton(),
+                ],
+              ),
             ),
             SliverToBoxAdapter(
               child: CategoryItemListView(),

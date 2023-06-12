@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:newsapp/Features/Home/HomeView.dart';
 import 'package:newsapp/Features/Splash/Wedgits/splashViewBody.dart';
 
@@ -29,7 +27,7 @@ class _SplashViewState extends State<SplashView> {
     Future.delayed(
       const Duration(seconds: 2),
       () {
-        Navigator.pushNamed(context, HomeView.id);
+        Navigator.pushReplacementNamed(context, HomeView.id);
       },
     );
   }
